@@ -1,0 +1,6 @@
+{
+  "name": "Shop with Morenike",
+  "description": "Premier local food market advertising platform and marketplace for retailers and consumers, sourcing fresh agricultural goods, grains, tubers, oils, and foodstuffs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
