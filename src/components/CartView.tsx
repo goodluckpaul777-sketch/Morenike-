@@ -122,8 +122,13 @@ export const CartView: React.FC<CartViewProps> = ({
               return (
                 <div key={`${item.productId}-${item.selectedTier}`} className="p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                   <div className="flex items-start gap-4 flex-1">
-                    <div className="w-18 h-18 rounded-xl bg-stone-50 border border-stone-200 flex items-center justify-center shrink-0 p-1 relative overflow-hidden shadow-2xs">
-                      <FoodIllustration id={item.productId} category={item.product.imageCategory} className="w-full h-full object-contain" />
+                    <div className="w-18 h-18 rounded-xl bg-stone-100 border border-stone-200 shrink-0 relative overflow-hidden shadow-2xs">
+                      <img
+                        src={item.product.imageUrl || `/images/${item.product.imageCategory || 'peppers'}.jpg`}
+                        alt={item.product.name}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
                       <span className={`absolute bottom-0 inset-x-0 text-center text-[9px] font-mono font-bold py-0.5 ${
                         item.selectedTier === 'retailer' ? 'bg-amber-800 text-white' : 'bg-emerald-800 text-white'
                       }`}>

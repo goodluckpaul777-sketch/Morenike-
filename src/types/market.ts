@@ -1,11 +1,15 @@
 export type Category = 
   | 'all'
+  | 'peppers_vegetables'
   | 'tubers'
   | 'grains'
-  | 'peppers_vegetables'
   | 'oils_fats'
   | 'proteins_seafood'
   | 'spices_seasonings'
+  | 'pasta_packaged'
+  | 'drinks_beverages'
+  | 'frozen_foods'
+  | 'hampers'
   | 'packaged_staples';
 
 export type TargetAudience = 'both' | 'retailers' | 'consumers';

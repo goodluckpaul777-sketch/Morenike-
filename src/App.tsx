@@ -13,6 +13,7 @@ import { CheckoutModal } from './components/CheckoutModal';
 import { OrderSuccessModal } from './components/OrderSuccessModal';
 import { PriceWatch } from './components/PriceWatch';
 import { WholesaleBanner } from './components/WholesaleBanner';
+import { AgroPromoBanners } from './components/AgroPromoBanners';
 import { HowItWorks } from './components/HowItWorks';
 import { Footer } from './components/Footer';
 import { 
@@ -34,12 +35,16 @@ import {
 
 const CATEGORIES: { id: Category; label: string }[] = [
   { id: 'all', label: 'All Commodities' },
-  { id: 'peppers_vegetables', label: 'Peppers & Vegetables' },
+  { id: 'peppers_vegetables', label: 'Veggies & Peppers' },
   { id: 'tubers', label: 'Tubers & Roots' },
-  { id: 'grains', label: 'Grains & Flours' },
-  { id: 'oils_fats', label: 'Oils & Cooking Fats' },
-  { id: 'proteins_seafood', label: 'Smoked Fish & Seafood' },
-  { id: 'spices_seasonings', label: 'Spices & Locust Beans' },
+  { id: 'grains', label: 'Grains & Seeds' },
+  { id: 'oils_fats', label: 'Edible Oil' },
+  { id: 'frozen_foods', label: 'Frozen Foods' },
+  { id: 'proteins_seafood', label: 'Seafood & Fish' },
+  { id: 'pasta_packaged', label: 'Pasta & Packaged' },
+  { id: 'spices_seasonings', label: 'Seasonings & Spices' },
+  { id: 'drinks_beverages', label: 'Drinks & Beverages' },
+  { id: 'hampers', label: 'Food Hampers' },
 ];
 
 export default function App() {
@@ -48,8 +53,17 @@ export default function App() {
     try {
       const saved = localStorage.getItem('morenike_advertised_goods');
       if (saved) {
-        const parsed = JSON.parse(saved);
-        return [...parsed, ...INITIAL_PRODUCTS];
+        const parsed: Product[] = JSON.parse(saved);
+        const userAds = Array.isArray(parsed)
+          ? parsed.filter(
+              (p) =>
+                p.isUserAdvertised &&
+                p.id !== 'prod-9' &&
+                !p.name?.toLowerCase().includes('cameroun') &&
+                !p.name?.toLowerCase().includes('cameroon')
+            )
+          : [];
+        return [...userAds, ...INITIAL_PRODUCTS];
       }
     } catch (e) {
       console.error(e);
@@ -62,7 +76,15 @@ export default function App() {
     try {
       const saved = localStorage.getItem('morenike_cart');
       if (saved) {
-        return JSON.parse(saved);
+        const parsed = JSON.parse(saved);
+        return Array.isArray(parsed)
+          ? parsed.filter(
+              (item: CartItem) =>
+                item.productId !== 'prod-9' &&
+                !item.product?.name?.toLowerCase().includes('cameroun') &&
+                !item.product?.name?.toLowerCase().includes('cameroon')
+            )
+          : [];
       }
     } catch (e) {
       console.error(e);
@@ -542,8 +564,17 @@ export default function App() {
                 </div>
               )}
 
+              {/* Agrohandlers Customer Care & Quality Promo Banners */}
+              <AgroPromoBanners
+                onOpenAdvertiseModal={() => setIsAdvertiseModalOpen(true)}
+                onExploreProducts={() => {
+                  const el = document.getElementById('products-section');
+                  el?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              />
+
               {/* B2B Wholesale Supply Banner */}
-              <div className="mt-12">
+              <div className="mt-8">
                 <WholesaleBanner
                   onSelectRetailerMode={() => {
                     setAudienceFilter('retailers');

@@ -77,18 +77,34 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <button
-                  onClick={() => onSelectCategory('proteins_seafood')}
+                  onClick={() => onSelectCategory('frozen_foods')}
                   className="hover:text-amber-300 transition-colors cursor-pointer"
                 >
-                  Smoked Catfish & Oron Crayfish
+                  Frozen Foods (Titus, Shawa, Chicken)
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onSelectCategory('spices_seasonings')}
+                  onClick={() => onSelectCategory('pasta_packaged')}
                   className="hover:text-amber-300 transition-colors cursor-pointer"
                 >
-                  Indigenous Spices & Fermented Iru
+                  Pasta & Packaged (Semovita, Spaghetti, Indomie)
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onSelectCategory('drinks_beverages')}
+                  className="hover:text-amber-300 transition-colors cursor-pointer"
+                >
+                  Drinks & Beverages (Milk, Juices, Malt)
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onSelectCategory('hampers')}
+                  className="hover:text-amber-300 transition-colors cursor-pointer"
+                >
+                  Food Hampers & Festive Baskets
                 </button>
               </li>
             </ul>

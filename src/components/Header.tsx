@@ -56,12 +56,16 @@ export const Header: React.FC<HeaderProps> = ({
               className="bg-stone-50 text-xs font-semibold text-stone-700 px-3 py-2.5 border-r border-stone-200 focus:outline-none cursor-pointer"
             >
               <option value="all">All Categories</option>
-              <option value="peppers_vegetables">Peppers & Veggies</option>
+              <option value="peppers_vegetables">Veggies & Peppers</option>
               <option value="tubers">Tubers & Roots</option>
-              <option value="grains">Grains & Flours</option>
-              <option value="oils_fats">Cooking Oils</option>
+              <option value="grains">Grains & Seeds</option>
+              <option value="oils_fats">Edible Oil</option>
+              <option value="frozen_foods">Frozen Foods</option>
               <option value="proteins_seafood">Seafood & Fish</option>
-              <option value="spices_seasonings">Spices & Iru</option>
+              <option value="pasta_packaged">Pasta & Packaged</option>
+              <option value="spices_seasonings">Seasonings & Spices</option>
+              <option value="drinks_beverages">Drinks & Beverages</option>
+              <option value="hampers">Food Hampers</option>
             </select>
 
             {/* Input */}

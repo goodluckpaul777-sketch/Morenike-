@@ -57,12 +57,13 @@ export const AdvertiseGoodsModal: React.FC<AdvertiseGoodsModalProps> = ({
       imageCategory,
       imageUrl: (() => {
         switch (imageCategory) {
-          case 'pepper': return 'https://commons.wikimedia.org/wiki/Special:FilePath/Basket_of_scotch_bonnet_pepper.jpg';
-          case 'tuber': return 'https://commons.wikimedia.org/wiki/Special:FilePath/Yam_2.jpg';
-          case 'oil': return 'https://commons.wikimedia.org/wiki/Special:FilePath/Palm_Oil_-.jpg';
-          case 'grain': return 'https://commons.wikimedia.org/wiki/Special:FilePath/Garri_also_called_cassava_flakes.jpg';
-          case 'protein': return 'https://commons.wikimedia.org/wiki/Special:FilePath/Smoked_Catfish_Badagry_Market.jpg';
-          default: return 'https://commons.wikimedia.org/wiki/Special:FilePath/Basket_of_scotch_bonnet_pepper.jpg';
+          case 'pepper': return '/images/peppers.jpg';
+          case 'tuber': return '/images/yam.jpg';
+          case 'oil': return '/images/palm_oil.jpg';
+          case 'grain': return '/images/garri.jpg';
+          case 'protein': return '/images/smoked_fish.jpg';
+          case 'spice': return '/images/spices.jpg';
+          default: return '/images/peppers.jpg';
         }
       })(),
       badge: badgeText.trim() || 'Vendor Listed',

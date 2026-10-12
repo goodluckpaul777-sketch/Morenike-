@@ -33,7 +33,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       <div>
         {/* Visual Hero Container */}
         <div className="cursor-pointer" onClick={() => onOpenDetails(product)}>
-          <ProductVisual product={product} className="h-48" />
+          <ProductVisual product={product} className="h-56" />
         </div>
 
         {/* Card Content */}

@@ -171,6 +171,20 @@ export const Hero: React.FC<HeroProps> = ({
                     <div className="text-[11px] text-stone-400 mt-1">Ready for home pantry</div>
                   </div>
                 </div>
+
+                {/* Real Produce Photo Strip */}
+                <div className="mt-4 pt-3 border-t border-stone-800/80 flex items-center justify-between">
+                  <div className="flex -space-x-2">
+                    <img src="/images/peppers.jpg" alt="Peppers" className="w-8 h-8 rounded-full object-cover ring-2 ring-stone-900 shadow-sm" />
+                    <img src="/images/yam.jpg" alt="Yam" className="w-8 h-8 rounded-full object-cover ring-2 ring-stone-900 shadow-sm" />
+                    <img src="/images/palm_oil.jpg" alt="Palm oil" className="w-8 h-8 rounded-full object-cover ring-2 ring-stone-900 shadow-sm" />
+                    <img src="/images/tomatoes.jpg" alt="Tomatoes" className="w-8 h-8 rounded-full object-cover ring-2 ring-stone-900 shadow-sm" />
+                    <img src="/images/crayfish.jpg" alt="Crayfish" className="w-8 h-8 rounded-full object-cover ring-2 ring-stone-900 shadow-sm" />
+                  </div>
+                  <div className="text-[11px] text-amber-300/90 font-medium">
+                    11+ Verified Fresh Local Commodities
+                  </div>
+                </div>
               </div>
 
               {/* Verified Trust Strip */}
